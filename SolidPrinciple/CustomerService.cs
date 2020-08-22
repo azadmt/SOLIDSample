@@ -39,12 +39,22 @@ namespace CustomerService
     }
 
 
-    public interface ICustomerRepository : IRepository<Customer>
+    public interface ICustomerRepository 
     {
-
+        Customer Get(object id);
+        void Add(Customer item);
     }
-    public class CustomerRepository : RepositoryBase<dynamic>
+    public class CustomerRepository 
     {
+        public Customer Get(object id)
+        {
+            return  new Customer();
+        }
+
+        public void Add(Customer item)
+        {
+
+        }
 
     }
 

@@ -80,9 +80,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Fakes Include="Fakes\CustomerService.fakes" />
     <Fakes Include="Fakes\System.fakes" />
     <Fakes Include="Fakes\mscorlib.fakes" />
+    <Fakes Include="Fakes\CustomerService.fakes" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

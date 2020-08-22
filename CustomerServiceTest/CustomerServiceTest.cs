@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
+using CustomerService.Fakes;
 
 namespace CustomerServiceTest
 {
@@ -24,41 +25,33 @@ namespace CustomerServiceTest
 
             using (ShimsContext.Create())
             {
-                 CustomerService.Fakes.ShimRepositoryBase<Customer>.AllInstances.AddT0 = (a, b) => { customerAdded = true; };
-                //var shimRepositoryBase = new CustomerService.Fakes.ShimRepositoryBase<Customer>()
-                //{
-                //    AddT0 = (a) => { customerAdded = true; }
-                //};
+                 ShimCustomerRepository.AllInstances.AddCustomer = (a, b) => { customerAdded = true; };
 
                 var shimCustomerRepository = new CustomerService.Fakes.ShimCustomerRepository()
                 {
-                
+
                 };
 
 
                 System.IO.Fakes.ShimFile.WriteAllTextStringString = (a, b) => { logAdded = true; };
 
-                var sm = new SmtpClient();
-                //System.Net.Mail.
-                //       var customerRepoStub = new System.Net.Mail.Fakes.StubSmtpClient
-                //       {
-                //           Se
-                //       };
 
                 //Shim Does not Support Observer on method call
                 //https://www.dotnetcurry.com/visualstudio/963/microsoft-fakes-framework-visual-studio
 
                 var customerService = new CustomerService.CustomerService();
-                SetPrivateField(customerService, "_repository", shimCustomerRepository.Instance);
+              //  SetPrivateField(customerService, "_repository", shimCustomerRepository.Instance);
                 //customerService.CreateCustomer(new Customer { });
-
+                //ShimCustomerService.AllInstances.SendNotificationCustomer = (a, b) => { notificationSent = true; };
+                //ShimCustomerService.AllInstances.CreateCustomerCustomer = (a, b) => { customerService.CreateCustomer(b);};
                 var shimCustomerService = new CustomerService.Fakes.ShimCustomerService()
                 {
                     SendNotificationCustomer = (a) => { notificationSent = true; },
-                    CreateCustomerCustomer=(a)=> customerService.CreateCustomer(a)
+                    CreateCustomerCustomer = (a) => customerService.CreateCustomer(a)
                 };
-
-                //SetPrivateField(shimCustomerService.Instance, "_repository", shimCustomerRepository.Instance);
+                customerService = shimCustomerService;
+                SetPrivateField(shimCustomerService.Instance, "_repository", shimCustomerRepository.Instance);
+                customerService.CreateCustomer(new Customer());
                 shimCustomerService.Instance.CreateCustomer(new Customer());
                 Assert.IsTrue(customerAdded);
                 Assert.IsTrue(notificationSent);
