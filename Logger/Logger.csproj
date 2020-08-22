@@ -43,7 +43,11 @@
     <Compile Include="ErrorLogger.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Refactor\RefactoredLogger.cs" />
+    <Compile Include="Refactor\EventLogger.cs" />
+    <Compile Include="Refactor\FileLogger.cs" />
+    <Compile Include="Refactor\LoggerContext.cs" />
+    <Compile Include="Refactor\LoggerFactory.cs" />
+    <Compile Include="Refactor\ILogger.cs" />
     <Compile Include="Refactor\RefactorV1.cs" />
   </ItemGroup>
   <ItemGroup />
