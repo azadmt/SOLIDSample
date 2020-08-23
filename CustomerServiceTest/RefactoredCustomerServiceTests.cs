@@ -14,7 +14,7 @@ namespace CustomerServiceTest
     public class RefactoredCustomerServiceTests
     {
         [TestMethod]
-        public void CreateCustmer_WithValidData_ShuodCreateCustomerInDbAndSentNotification()
+        public void CreateCustomer_WithValidData_ShouldCreateCustomerInDbAndSentNotification()
         {
 
             //arrange
@@ -50,7 +50,7 @@ namespace CustomerServiceTest
         }
 
         [TestMethod]
-        public void CreateCustmer_WithValidData_ShuodCreateCustomerInDbAndSentNotification_Moq()
+        public void CreateCustomer_WithValidData_ShouldCreateCustomerInDbAndSentNotification_Moq()
         {
             //arrange
             var customerRepository = new Mock<ICustomerRepository>();
@@ -74,7 +74,7 @@ namespace CustomerServiceTest
 
         [TestMethod]
 
-        public void CreateCustmer_WithNotValidData_ShuodGetUserDataNotValidException_And_LogTheException()
+        public void CreateCustomer_WithNotValidData_ShouldGetUserDataNotValidException_And_LogTheException()
         {
 
             //arrange
