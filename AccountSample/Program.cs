@@ -11,7 +11,7 @@ namespace AccountSample
         static List<BankAccount> bankAccounts = new List<BankAccount>();
         static void Main(string[] args)
         {
-            bankAccounts.Add(new NegativeBankAccount { Number = 100, Balance = 5000 });
+            bankAccounts.Add(new DebitableBankAccount { Number = 100, Balance = 5000 });
             bankAccounts.Add(new BankAccount { Number = 104, Balance = 1000 });
             bankAccounts.Add(new BankAccount { Number = 106, Balance = 500 });
             bankAccounts.Add(new LimitBalanceBankAccount { Number = 101, Balance = 10000, BalanceLimitation = 9000 });

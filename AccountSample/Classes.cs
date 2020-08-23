@@ -21,7 +21,7 @@ namespace AccountSample
         }
     }
 
-    public class NegativeBankAccount : BankAccount
+    public class DebitableBankAccount : BankAccount
     {
         public override void Withdraw(int amount)
         {
@@ -41,4 +41,6 @@ namespace AccountSample
             Balance -= amount;
         }
     }
+
+
 }
