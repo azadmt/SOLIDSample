@@ -11,10 +11,10 @@ namespace AccountSample
         static List<BankAccount> bankAccounts = new List<BankAccount>();
         static void Main(string[] args)
         {
-            bankAccounts.Add(new NegativeBankAccount { Number = 100, Balance = 5000 });
+            bankAccounts.Add(new DebitableBankAccount { Number = 100, Balance = 5000 });
             bankAccounts.Add(new BankAccount { Number = 104, Balance = 1000 });
             bankAccounts.Add(new BankAccount { Number = 106, Balance = 500 });
-            bankAccounts.Add(new LimitBalanceBankAccount { Number = 101, Balance = 10000, BalanceLimitation = 9000 });
+            bankAccounts.Add(new MinimumBalanceBankAccount { Number = 101, Balance = 10000, BalanceLimitation = 9000 });
 
             foreach (var item in bankAccounts)
             {
@@ -46,7 +46,7 @@ namespace AccountSample
             {
 
                 var account = bankAccounts.FirstOrDefault(p => p.Number == item.Key);
-                if (account is LimitBalanceBankAccount) continue;
+                if (account is MinimumBalanceBankAccount) continue;
                 account.Withdraw(item.Value);
             }
         }
