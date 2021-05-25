@@ -8,41 +8,6 @@ using System.Threading.Tasks;
 namespace CustomerService
 {
 
-    public interface IRepository<T> where T :class 
-    {
-        T Get(object id);
-        void Add(T item);
-        void Delete(T item);
-        void Update(T item);
-    }
-
-    public class RepositoryBase<T> : IRepository<T>
-        where T : class        
-    {
-        public T Get(object id)
-        {
-            //get Item
-            return null;
-        }
-
-        public void Add(T item)
-        {
-            //save Item
-        }
-
-        public void Delete(T item)
-        {
-            //Delete Item
-        }
-
-        public void Update(T item)
-        {
-            //Update Item
-        }
-    }
-
-
-
     public interface ILogger
     {
         void Log(string error);

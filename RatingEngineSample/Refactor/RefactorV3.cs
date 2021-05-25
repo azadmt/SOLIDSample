@@ -45,7 +45,7 @@ namespace RatingEngineSample.Refactor
                 case PolicyType.Life:
                     return new LifePolicyRateCalculator3();
                     break;
-                case PolicyType.Auto:
+                case PolicyType.Vehicle:
                     return new AutoPolicyRateCalculator3();
                     break;
                 case PolicyType.Accident:
@@ -134,7 +134,7 @@ namespace RatingEngineSample.Refactor
         ILogger _logger;
         public decimal CalculateRate(Policy policy)
         {
-            _logger.Log("Rating AUTO policy...");
+            _logger.Log("Rating Vehicle policy...");
             _logger.Log("Validating policy.");
             if (DateTime.Now.Year - policy.Year < 5)
             {

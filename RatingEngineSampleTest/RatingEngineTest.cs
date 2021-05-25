@@ -10,11 +10,11 @@ namespace RatingEngineSampleTest
     public class RatingEngineTest
     {
         [TestMethod]
-        public void ReturnsRatingOf10000For200000LandPolicy()
+        public void Calculate_Rating_Whith_Valid_VehiclePolicy_Info()
         {
             var policy = new Policy
             {
-                Type = PolicyType.Auto,
+                Type = PolicyType.Vehicle,
                 Miles = 20000,
                 Year = 2000,
                 Price = 10000000
@@ -26,26 +26,8 @@ namespace RatingEngineSampleTest
             engine.Rate();
             var result = engine.Rating;
 
-            Assert.AreEqual(10000, result);
+            Assert.AreEqual(900000m, result);
         }
 
-        //[TestMethod]
-        //public void ReturnsRatingOf0For200000BondOn260000LandPolicy()
-        //{
-        //    var policy = new Policy
-        //    {
-        //        Type = PolicyType.Land,
-        //        BondAmount = 200000,
-        //        Valuation = 260000
-        //    };
-        //    string json = JsonConvert.SerializeObject(policy);
-        //    File.WriteAllText("policy.json", json);
-
-        //    var engine = new RatingEngine();
-        //    engine.Rate();
-        //    var result = engine.Rating;
-
-        //    Assert.AreEqual(0, result);
-        //}
     }
 }

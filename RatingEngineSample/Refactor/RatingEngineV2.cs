@@ -40,7 +40,7 @@ namespace RatingEngineSample.Refactor
                 case PolicyType.Life:
                     return new LifePolicyRateCalculator(new ConsoleLogger(), new AgeCalculator());
 
-                case PolicyType.Auto:
+                case PolicyType.Vehicle:
                     return new AutoPolicyRateCalculator(new ConsoleLogger());
 
                 case PolicyType.Accident:
@@ -94,7 +94,7 @@ namespace RatingEngineSample.Refactor
         }
         public override decimal Calculate(Policy policy)
         {
-            logger.Log("Rating AUTO policy...");
+            logger.Log("Rating Vehicle policy...");
             logger.Log("Validating policy.");
 
             if (DateTime.Now.Year - policy.Year < 5)

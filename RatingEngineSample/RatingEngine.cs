@@ -26,16 +26,16 @@ namespace RatingEngineSample
 
             switch (policy.Type)
             {
-                case PolicyType.Auto:
-                    Console.WriteLine("Rating AUTO policy...");
+                case PolicyType.Vehicle:
+                    Console.WriteLine("Rating Vehicle policy...");
                     Console.WriteLine("Validating policy.");
                     if (DateTime.Now.Year - policy.Year < 5)
                     {
-                        Rating = policy.Price * (5 / 100);
+                        Rating = policy.Price * (5m / 100);
                     }
                     else
                     {
-                        Rating = policy.Price * (9 / 100);
+                        Rating = policy.Price * (9m / 100);
 
                     }
                     break;

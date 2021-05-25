@@ -28,8 +28,8 @@ namespace RatingEngineSample.Refactor
 
             switch (policy.Type)
             {
-                case PolicyType.Auto:
-                    logger.Log("Rating AUTO policy...");
+                case PolicyType.Vehicle:
+                    logger.Log("Rating Vehicle policy...");
                     logger.Log("Validating policy.");
 
                     if (DateTime.Now.Year - policy.Year < 5)

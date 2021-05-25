@@ -30,7 +30,7 @@ namespace RatingEngineSample
     public enum PolicyType
     {
         Life = 0,
-        Auto = 1,
+        Vehicle = 1,
         Accident = 2
     }
 }

@@ -40,10 +40,6 @@ namespace CustomerServiceTest
                 //https://www.dotnetcurry.com/visualstudio/963/microsoft-fakes-framework-visual-studio
 
                 var customerService = new CustomerService.CustomerService();
-              //  SetPrivateField(customerService, "_repository", shimCustomerRepository.Instance);
-                //customerService.CreateCustomer(new Customer { });
-                //ShimCustomerService.AllInstances.SendNotificationCustomer = (a, b) => { notificationSent = true; };
-                //ShimCustomerService.AllInstances.CreateCustomerCustomer = (a, b) => { customerService.CreateCustomer(b);};
                 var shimCustomerService = new CustomerService.Fakes.ShimCustomerService()
                 {
                     SendNotificationCustomer = (a) => { notificationSent = true; },
