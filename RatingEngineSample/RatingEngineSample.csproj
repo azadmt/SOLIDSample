@@ -49,9 +49,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RatingEngine.cs" />
-    <Compile Include="Refactor\RatingEngineV1.cs" />
-    <Compile Include="Refactor\RatingEngineV2.cs" />
-    <Compile Include="Refactor\RefactorV3.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
